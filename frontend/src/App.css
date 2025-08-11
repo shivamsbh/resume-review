@@ -140,6 +140,63 @@ html {
   color: #5f6368;
 }
 
+/* Enhanced table styling */
+.prose table {
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+.prose table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+  border: 1px solid #dadce0;
+}
+
+.prose table td {
+  padding: 0.75rem;
+  border: 1px solid #dadce0;
+  vertical-align: top;
+}
+
+.prose table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.prose table tr:hover {
+  background-color: #e8f0fe;
+}
+
+/* Responsive table wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Better list formatting */
+.prose ul li {
+  position: relative;
+  padding-left: 0;
+}
+
+.prose ol li {
+  padding-left: 0.5rem;
+}
+
+/* Improved spacing for nested content */
+.prose li > p {
+  margin-bottom: 0.5rem;
+}
+
+.prose li > ul, .prose li > ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 /* Mobile responsiveness improvements */
 @media (max-width: 640px) {
   .card-google {

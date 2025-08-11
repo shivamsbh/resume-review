@@ -184,16 +184,33 @@ function App() {
                   <div className="text-google-gray-800 leading-relaxed">
                     <ReactMarkdown 
                       components={{
-                      h1: ({children}) => <h1 className="text-2xl font-bold text-google-gray-900 mb-4 flex items-center"><Target className="w-6 h-6 mr-2 text-google-blue" />{children}</h1>,
-                      h2: ({children}) => <h2 className="text-xl font-semibold text-google-gray-900 mb-3 mt-6 flex items-center"><Zap className="w-5 h-5 mr-2 text-google-yellow" />{children}</h2>,
-                      h3: ({children}) => <h3 className="text-lg font-medium text-google-gray-900 mb-2 mt-4">{children}</h3>,
-                      p: ({children}) => <p className="mb-4 text-google-gray-700 leading-relaxed">{children}</p>,
-                      ul: ({children}) => <ul className="list-none mb-4 space-y-2">{children}</ul>,
-                      li: ({children}) => <li className="text-google-gray-700 flex items-start"><span className="text-google-blue mr-2 mt-1">•</span><span>{children}</span></li>,
-                      strong: ({children}) => <strong className="font-semibold text-google-gray-900 bg-yellow-100 px-1 rounded">{children}</strong>,
-                      em: ({children}) => <em className="italic text-google-blue">{children}</em>,
-                      blockquote: ({children}) => <blockquote className="border-l-4 border-google-yellow bg-google-gray-50 p-4 my-4 italic">{children}</blockquote>,
-                      code: ({children}) => <code className="bg-google-gray-100 text-google-gray-800 px-2 py-1 rounded text-sm font-mono">{children}</code>,
+                        h1: ({children}) => <h1 className="text-2xl font-bold text-google-gray-900 mb-4 mt-6 flex items-center"><Target className="w-6 h-6 mr-2 text-google-blue" />{children}</h1>,
+                        h2: ({children}) => <h2 className="text-xl font-semibold text-google-gray-900 mb-3 mt-6 flex items-center"><Zap className="w-5 h-5 mr-2 text-google-yellow" />{children}</h2>,
+                        h3: ({children}) => <h3 className="text-lg font-medium text-google-gray-900 mb-2 mt-4">{children}</h3>,
+                        h4: ({children}) => <h4 className="text-base font-medium text-google-gray-900 mb-2 mt-3">{children}</h4>,
+                        p: ({children}) => <p className="mb-4 text-google-gray-700 leading-relaxed">{children}</p>,
+                        ul: ({children}) => <ul className="list-none mb-4 space-y-2">{children}</ul>,
+                        ol: ({children}) => <ol className="list-decimal list-inside mb-4 space-y-2 text-google-gray-700">{children}</ol>,
+                        li: ({children}) => <li className="text-google-gray-700 flex items-start"><span className="text-google-blue mr-2 mt-1 flex-shrink-0">•</span><span className="flex-1">{children}</span></li>,
+                        strong: ({children}) => <strong className="font-semibold text-google-gray-900 bg-yellow-100 px-1 rounded">{children}</strong>,
+                        em: ({children}) => <em className="italic text-google-blue">{children}</em>,
+                        blockquote: ({children}) => <blockquote className="border-l-4 border-google-yellow bg-google-gray-50 p-4 my-4 italic">{children}</blockquote>,
+                        code: ({children}) => <code className="bg-google-gray-100 text-google-gray-800 px-2 py-1 rounded text-sm font-mono">{children}</code>,
+                        pre: ({children}) => <pre className="bg-google-gray-100 p-4 rounded-lg overflow-x-auto mb-4">{children}</pre>,
+                        table: ({children}) => (
+                          <div className="overflow-x-auto mb-6">
+                            <table className="min-w-full bg-white border border-google-gray-300 rounded-lg shadow-sm">
+                              {children}
+                            </table>
+                          </div>
+                        ),
+                        thead: ({children}) => <thead className="bg-google-gray-50">{children}</thead>,
+                        tbody: ({children}) => <tbody className="divide-y divide-google-gray-200">{children}</tbody>,
+                        tr: ({children}) => <tr className="hover:bg-google-gray-50 transition-colors">{children}</tr>,
+                        th: ({children}) => <th className="px-4 py-3 text-left text-xs font-medium text-google-gray-700 uppercase tracking-wider border-b border-google-gray-300">{children}</th>,
+                        td: ({children}) => <td className="px-4 py-3 text-sm text-google-gray-700 border-b border-google-gray-200">{children}</td>,
+                        hr: () => <hr className="my-6 border-google-gray-300" />,
+                        a: ({href, children}) => <a href={href} className="text-google-blue hover:text-google-blue-dark underline" target="_blank" rel="noopener noreferrer">{children}</a>,
                       }}
                     >
                       {suggestions}

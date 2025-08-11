@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useCallback } from "react";
 import { Upload, FileText, Loader2, Share2, RotateCcw, Sparkles, Target, Zap, Linkedin, Github } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 function App() {
   const [file, setFile] = useState(null);
@@ -183,6 +184,7 @@ function App() {
                 <div className="bg-gradient-to-r from-google-blue-light to-google-gray-50 rounded-xl p-6 border-l-4 border-google-blue">
                   <div className="text-google-gray-800 leading-relaxed">
                     <ReactMarkdown 
+                      remarkPlugins={[remarkGfm]}
                       components={{
                         h1: ({children}) => <h1 className="text-2xl font-bold text-google-gray-900 mb-4 mt-6 flex items-center"><Target className="w-6 h-6 mr-2 text-google-blue" />{children}</h1>,
                         h2: ({children}) => <h2 className="text-xl font-semibold text-google-gray-900 mb-3 mt-6 flex items-center"><Zap className="w-5 h-5 mr-2 text-google-yellow" />{children}</h2>,

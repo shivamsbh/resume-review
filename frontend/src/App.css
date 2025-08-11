@@ -1,0 +1,188 @@
+/* Additional custom styles for Google-inspired design */
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dadce0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bdc1c6;
+}
+
+/* Enhanced focus styles for accessibility */
+.btn-google:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+.input-google:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #1a73e8;
+}
+
+/* Loading animation for buttons */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-gradient-animated {
+  background: linear-gradient(-45deg, #1a73e8, #ea4335, #fbbc04, #34a853);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Enhanced card hover effects */
+.card-google {
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-google:hover {
+  transform: translateY(-2px);
+}
+
+/* File upload area enhancements */
+.upload-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(26, 115, 232, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.upload-area:hover::before {
+  left: 100%;
+}
+
+/* Prose styling for markdown content */
+.prose {
+  color: #3c4043;
+  max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  color: #202124;
+  font-weight: 600;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.prose ul {
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  color: #202124;
+  font-weight: 600;
+}
+
+.prose code {
+  background-color: #f1f3f4;
+  color: #5f6368;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose blockquote {
+  border-left: 4px solid #1a73e8;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #5f6368;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 640px) {
+  .card-google {
+    margin: 0 1rem;
+  }
+  
+  .btn-google {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    background: linear-gradient(135deg, #202124 0%, #3c4043 100%);
+    color: #e8eaed;
+  }
+  
+  .dark-mode .card-google {
+    background-color: #303134;
+    border-color: #5f6368;
+  }
+  
+  .dark-mode .text-google-gray-900 {
+    color: #e8eaed !important;
+  }
+  
+  .dark-mode .text-google-gray-600 {
+    color: #9aa0a6 !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .btn-google,
+  header,
+  footer {
+    display: none;
+  }
+  
+  .card-google {
+    box-shadow: none;
+    border: 1px solid #dadce0;
+  }
+}
